@@ -1,163 +1,150 @@
-# bank-simulator
-<div align="center">
+# 🏦 Nexus Bank ATM Simulation
 
-<!-- HERO BANNER -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1225,50:1a2a5a,100:4a90e2&height=200&section=header&text=NEXUS%20BANK%20ATM&fontSize=52&fontColor=ffffff&fontAlignY=40&desc=Full-Featured%20ATM%20Simulation%20for%20the%20Web&descAlignY=62&descSize=16&descColor=7ab8ff&animation=fadeIn" width="100%" />
-
-<br/>
-
-
-
-![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-
-
-
-
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-
-
-
-
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-
-
-
-
-![INR](https://img.shields.io/badge/Currency-INR%20₹-00C853?style=for-the-badge)
-
-
-
-
-![Languages](https://img.shields.io/badge/Languages-20%2B-4a90e2?style=for-the-badge)
-
-
-
-<br/>
-
-> **A pixel-perfect, fully functional ATM simulation built in React — complete with persistent storage, multilingual support, OTP flows, account creation, and real-time transactions.**
-
-<br/>
-
----
-
-</div>
-
-## 🎬 Prototype Demo
-
-> _Watch the ATM in action — from card insertion to fund transfer._
-
-<div align="center">
-
-[
-
-![Demo Video](https://img.shields.io/badge/▶%20Watch%20Demo-4a90e2?style=for-the-badge&logo=youtube&logoColor=white)
-
-](https://your-demo-link-here.com)
-
-<!-- To embed a GIF: record your screen, drop it as /assets/demo.gif, then uncomment: -->
-<!-- 
-
-![Demo GIF](./assets/demo.gif)
-
- -->
-
-</div>
+A fully-featured, interactive ATM simulation built with React — complete with persistent storage, multilingual support, INR currency, OTP verification, and a sleek dark terminal UI.
 
 ---
 
 ## 📸 Screenshots
 
-<div align="center">
+| Welcome Screen | Main Menu |
+|:-:|:-:|
+| ![Welcome Screen](Screenshot_2026-06-03_203242.png) | ![Main Menu](Screenshot_2026-06-03_203307.png) |
 
-| Welcome Screen | PIN Entry | Main Menu |
-|:-:|:-:|:-:|
-| 
-
-![Welcome](./assets/screen-welcome.png)
-
- | 
-
-![PIN](./assets/screen-pin.png)
-
- | 
-
-![Menu](./assets/screen-menu.png)
-
- |
-
-| Balance View | Transaction History | Account Creation |
-|:-:|:-:|:-:|
-| 
-
-![Balance](./assets/screen-balance.png)
-
- | 
-
-![History](./assets/screen-history.png)
-
- | 
-
-![Create](./assets/screen-create.png)
-
- |
-
-> 💡 **Tip:** Take screenshots of each screen, save them in `/assets/`, named as above.
-
-</div>
+| Account Balance | Transaction Receipt |
+|:-:|:-:|
+| ![Account Balance](Screenshot_2026-06-03_203325.png) | ![Transaction Receipt](Screenshot_2026-06-03_203351.png) |
 
 ---
 
 ## ✨ Features
 
-<table>
-<tr>
-<td width="50%">
+### 🔐 Authentication
+- 4-digit PIN-based login with keypad UI
+- 3-attempt lockout with card block simulation
+- OTP verification (demo OTP: `1111`) for new account creation
+- PIN change functionality with current PIN verification
 
-### 🏦 Core Banking
-- ✅ Cash Withdrawal (up to ₹50,000/day)
-- ✅ Cash Deposit (up to ₹2,00,000)
-- ✅ Fund Transfer between accounts
-- ✅ Account Balance inquiry
-- ✅ Transaction history (last 15)
-- ✅ PIN change with verification
+### 💳 Account Management
+- Select from pre-loaded demo accounts or create a new one
+- Account creation with Aadhaar, phone, age, and gender validation
+- Auto-generated card numbers for new accounts
+- Separate checking and savings balance display
 
-</td>
-<td width="50%">
+### 💰 Transactions
+- **Cash Withdrawal** — quick-select chips (₹500 – ₹20,000) or custom amount; daily limit ₹50,000
+- **Cash Deposit** — quick-select chips (₹500 – ₹50,000) or custom amount; deposit limit ₹2,00,000
+- **Fund Transfer** — transfer to any other account; limit ₹1,00,000 per transaction
+- **Transaction History** — last 15 transactions with type, date, and amount
 
-### 🛠 Advanced Features
-- ✅ **Account Creation** with Aadhaar & phone validation
-- ✅ **OTP simulation** for new accounts
-- ✅ **Persistent Storage** — data survives page refresh
-- ✅ **20+ Languages** including all major Indian languages
-- ✅ **4 Demo Accounts** ready to use
-- ✅ Reset to defaults anytime
+### 🧾 Receipts
+- Auto-generated receipts after every withdrawal, deposit, and transfer
+- Displays account, amount, updated balance, and reference number
+- Timestamp in IST (Asia/Kolkata)
 
-</td>
-</tr>
-</table>
+### 💾 Persistent Storage
+- All balances, transactions, and new accounts persist across sessions via `window.storage` (artifact storage) with `localStorage` fallback
+- Storage badge shows live status: `LOADING → INITIALIZED → SAVING → SAVED`
+- One-click database reset to restore default state
 
----
+### 🌐 Multilingual Support
+20 languages supported, including:
 
-## 🌐 Language Support
-
-The ATM UI is fully localised in **20+ languages**:
-
-<div align="center">
-
-| 🇮🇳 Indian Languages | 🌍 International |
-|:--|:--|
-| Hindi · Bengali · Telugu · Marathi | French · German · Spanish |
-| Tamil · Gujarati · Kannada · Malayalam | Arabic · Chinese · Japanese |
-| Punjabi · Urdu · Odia · Assamese | Russian |
-
-</div>
+| Indian Languages | International |
+|---|---|
+| Hindi, Bengali, Telugu, Marathi | French, German, Spanish |
+| Tamil, Gujarati, Kannada | Arabic, Chinese, Japanese |
+| Malayalam, Punjabi, Urdu, Odia | Russian |
 
 ---
 
 ## 🚀 Getting Started
 
-### Prerequisites
+### Demo Accounts
 
-```bash
-node >= 16
-npm or yarn
+All demo accounts use PIN `1111`.
+
+| Name | Card | Checking | Savings |
+|---|---|---|---|
+| Aryan Rawat | ••0001 | ₹4,850.00 | ₹120.00 |
+| Taha Shaikh | ••0002 | ₹1,200.50 | ₹340.00 |
+| Karan Mehta | ••0003 | ₹2,800.00 | ₹550.00 |
+| Laxminarayan | ••0004 | ₹670.25 | ₹890.00 |
+
+### Create a New Account
+1. Click **+ CREATE ACCOUNT** on the welcome screen
+2. Fill in your name, age, gender, phone number, and Aadhaar
+3. Enter OTP `1111` to verify your phone
+4. Set a 4-digit PIN
+5. Your account is activated and ready to use
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Framework | React (Hooks) |
+| Styling | Custom CSS (Share Tech Mono + Rajdhani fonts) |
+| Storage | `window.storage` API / `localStorage` fallback |
+| Currency | Indian Rupee (₹) with INR formatting |
+| Timezone | Asia/Kolkata (IST) |
+
+---
+
+## 📋 Transaction Limits
+
+| Operation | Limit |
+|---|---|
+| Cash Withdrawal | ₹50,000 per day |
+| Cash Deposit | ₹2,00,000 per transaction |
+| Fund Transfer | ₹1,00,000 per transaction |
+| PIN Attempts | 3 (card blocked after 3 failures) |
+
+---
+
+## 🗂️ Project Structure
+
+```
+ATMSimulation/
+├── index.jsx          # Main component (single-file React app)
+│
+├── Constants
+│   ├── DEFAULT_DB     # Seed data for users & transactions
+│   ├── LANGUAGES      # 20 supported language definitions
+│   └── TRANSLATIONS   # UI string translations per language
+│
+├── Storage            # Async load/save with storage API + localStorage fallback
+├── DB                 # In-memory database with all business logic
+│
+└── Views
+    ├── welcome        # Card selection + demo account list
+    ├── createAccount  # New account registration form
+    ├── otp            # OTP keypad verification
+    ├── setPin         # Post-OTP PIN setup
+    ├── pin            # Login PIN entry
+    ├── menu           # Main menu (6 options)
+    ├── balance        # Checking + savings display
+    ├── withdraw       # Withdrawal with chip selector
+    ├── deposit        # Deposit with chip selector
+    ├── transfer       # Recipient selector + amount
+    ├── history        # Last 15 transactions
+    ├── changePin      # PIN update form
+    ├── receipt        # Printable transaction receipt
+    └── reset          # Database reset confirmation
+```
+
+---
+
+## ⚙️ Configuration
+
+To reset all data to factory defaults, click the **⚙ RESET** button on the welcome screen and confirm. This restores all account balances and clears all transactions added during the session.
+
+---
+
+## 📄 License
+
+This project is for educational and demonstration purposes.
+
+---
+
+*Built with ❤️ — Nexus Bank ATM Simulation v2.5*
